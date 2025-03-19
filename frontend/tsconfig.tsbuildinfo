@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/types.ts","./src/vite-env.d.ts","./src/components/algorithmselector.tsx","./src/components/methodform.tsx","./src/components/resultschart.tsx","./src/services/api.ts","./src/store/selectors.ts","./src/store/store.ts","./src/store/slices/calculationslice.ts","./src/store/slices/uislice.ts"],"version":"5.6.3"}

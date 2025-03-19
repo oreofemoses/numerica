@@ -1,13 +1,53 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --salt: #ffffff;
+  --salt-muted: #f3f4f6;
+  --pepper: #111827;
+  --pepper-light: #1f2937;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+.dark {
+  --salt: #111827;
+  --salt-muted: #1f2937;
+  --pepper: #ffffff;
+  --pepper-light: #f3f4f6;
+}
+
+@layer base {
+  body {
+    @apply antialiased;
+  }
+}
+
+@layer components {
+  .input-field {
+    @apply w-full px-4 py-2 border border-salt-muted/20 dark:border-pepper bg-salt dark:bg-pepper rounded-lg focus:ring-2 focus:ring-pepper/50 dark:focus:ring-salt/50 text-pepper dark:text-salt;
+  }
+
+  .button-primary {
+    @apply px-6 py-3 bg-pepper dark:bg-salt text-salt dark:text-pepper rounded-lg hover:bg-pepper-light dark:hover:bg-salt-muted transition-colors flex items-center space-x-2;
+  }
+
+  .button-secondary {
+    @apply px-4 py-2 border border-salt-muted/20 dark:border-pepper-light text-pepper/70 dark:text-salt/70 rounded-lg hover:border-pepper/50 dark:hover:border-salt/50 transition-colors;
+  }
 }
